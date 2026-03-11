@@ -1,0 +1,438 @@
+:root {
+  --bg: #060710;
+  --panel: rgba(255, 255, 255, 0.04);
+  --panel-strong: rgba(255, 255, 255, 0.08);
+  --accent: #6cf0c2;
+  --accent-2: #6b7bff;
+  --text: #e7ecf7;
+  --muted: #9aa3b5;
+  --danger: #ff6b6b;
+  --font: "Space Grotesk", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --shadow: 0 18px 60px rgba(0, 0, 0, 0.35);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font);
+  background: radial-gradient(circle at 20% 20%, rgba(108, 240, 194, 0.12), transparent 30%),
+    radial-gradient(circle at 80% 0%, rgba(107, 123, 255, 0.18), transparent 35%),
+    linear-gradient(135deg, #080b18 0%, #0c0f1f 40%, #05060e 100%);
+  color: var(--text);
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navigation */
+.top-nav {
+  background: var(--panel);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  padding: 16px 32px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.nav-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-logo-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: grid;
+  place-items: center;
+  color: #05060e;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 14px;
+}
+
+.nav-logo-text {
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 12px;
+}
+
+.nav-link {
+  padding: 10px 20px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+  font-size: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.2s ease;
+}
+
+.nav-link:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.nav-link.active {
+  color: #05060e;
+  font-weight: 700;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Home Page */
+.home-page {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+}
+
+.home-content {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.home-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin: 0 0 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.home-subtitle {
+  font-size: 20px;
+  color: var(--muted);
+  margin: 0 0 48px;
+}
+
+.domain-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 48px;
+}
+
+.domain-card {
+  padding: 32px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  text-decoration: none;
+  color: var(--text);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(16px);
+}
+
+.domain-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.domain-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  display: grid;
+  place-items: center;
+  color: #05060e;
+  font-weight: 700;
+  font-size: 28px;
+  margin: 0 auto 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.domain-card h2 {
+  margin: 0 0 12px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.domain-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* Chat Page Layout */
+#root > .app-wrapper > .app-shell {
+  margin: 32px auto;
+  max-width: 1100px;
+  width: calc(100% - 64px);
+}
+
+.app-shell {
+  width: min(1100px, 100%);
+  background: var(--panel);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(16px);
+  padding: 24px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 18px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  color: #05060e;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 10px 30px rgba(108, 240, 194, 0.25);
+}
+
+h1 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.subtitle {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 2px 0 0;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: var(--panel-strong);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(108, 240, 194, 0.12);
+}
+
+.chat-window {
+  background: var(--panel-strong);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 18px;
+  padding: 16px;
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 1fr;
+  min-height: 460px;
+}
+
+.messages {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding-right: 6px;
+  scrollbar-width: thin;
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px;
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+}
+
+.bubble {
+  max-width: 76%;
+  padding: 14px 16px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.bubble.user {
+  margin-left: auto;
+  background: linear-gradient(135deg, rgba(108, 240, 194, 0.18), rgba(107, 123, 255, 0.2));
+  border: 1px solid rgba(108, 240, 194, 0.35);
+}
+
+.bubble.assistant {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.tag {
+  padding: 4px 10px;
+  background: rgba(108, 240, 194, 0.1);
+  border: 1px solid rgba(108, 240, 194, 0.3);
+  border-radius: 999px;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+}
+
+.input {
+  width: 100%;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text);
+  font-size: 15px;
+  padding: 14px 16px;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.input:focus {
+  border-color: rgba(108, 240, 194, 0.5);
+  box-shadow: 0 0 0 4px rgba(108, 240, 194, 0.15);
+}
+
+.button {
+  border: none;
+  border-radius: 14px;
+  padding: 14px 18px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #05060e;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 12px 25px rgba(107, 123, 255, 0.35);
+  transition: transform 0.12s ease, box-shadow 0.2s ease;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.helper {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 2px;
+}
+
+.error {
+  color: var(--danger);
+  font-size: 13px;
+}
+
+@media (max-width: 800px) {
+  .top-nav {
+    padding: 12px 16px;
+  }
+
+  .nav-container {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .nav-links {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .nav-link {
+    flex: 1;
+    min-width: 100px;
+    text-align: center;
+  }
+
+  .home-page {
+    padding: 32px 16px;
+  }
+
+  .home-title {
+    font-size: 32px;
+  }
+
+  .home-subtitle {
+    font-size: 16px;
+  }
+
+  .domain-cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  #root > .app-wrapper > .app-shell {
+    margin: 16px;
+    width: calc(100% - 32px);
+    padding: 18px;
+  }
+
+  .bubble {
+    max-width: 100%;
+  }
+}

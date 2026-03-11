@@ -1,0 +1,9 @@
+export type Role = "user" | "assistant" | "system";
+
+export interface Message {
+  id: string;
+  role: Role;
+  content: string;
+  mode?: string;
+  timestamp?: number;
+}
