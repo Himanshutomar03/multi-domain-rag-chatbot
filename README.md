@@ -1,10 +1,10 @@
-# 🤖 Multi-Domain RAG Chatbot
+#  Multi-Domain RAG Chatbot
 
 A production-ready **Retrieval-Augmented Generation (RAG)** chatbot that serves intelligent answers across multiple knowledge domains — **Education**, **Medical**, and **Legal**. Built with a **FastAPI** backend, **React + TypeScript** frontend, and a hybrid retrieval pipeline (FAISS vector search + LLM fallback) powered by **Groq (LLaMA 3.1)**.
 
 ---
 
-## ✨ Features
+##  Features
 
 - **Multi-Domain Support** — Separate RAG pipelines for Education, Medical, and Legal domains, each with curated vectorstores and tailored prompts.
 - **Hybrid Retrieval** — Combines FAISS similarity search with an LLM-only fallback when no relevant documents are found, ensuring the chatbot always provides an answer.
@@ -16,7 +16,7 @@ A production-ready **Retrieval-Augmented Generation (RAG)** chatbot that serves 
 
 ---
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 multi-domain-rag-chatbot/
