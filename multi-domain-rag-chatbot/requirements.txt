@@ -14,3 +14,5 @@ numpy
 pyyaml
 streamlit
 openai
+groq
+rank-bm25

@@ -29,7 +29,7 @@ def get_llm():
 def load_vectors():
     if not VS_PATH.exists():
         raise FileNotFoundError(f"Vector store not found at {VS_PATH}")
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
     return FAISS.load_local(str(VS_PATH), embeddings, allow_dangerous_deserialization=True)
 
 RAG_PROMPT = PromptTemplate(

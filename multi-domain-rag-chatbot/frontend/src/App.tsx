@@ -77,6 +77,7 @@ export default function App() {
             path="/education"
             element={
               <ChatInterface
+                key="education"
                 domain="education"
                 title="Education Assistant"
                 subtitle="Hybrid RAG over your curated education vector store"
@@ -90,6 +91,7 @@ export default function App() {
             path="/medical"
             element={
               <ChatInterface
+                key="medical"
                 domain="medical"
                 title="Medical Assistant"
                 subtitle="Hybrid RAG over your curated medical vector store"
@@ -103,6 +105,7 @@ export default function App() {
             path="/legal"
             element={
               <ChatInterface
+                key="legal"
                 domain="legal"
                 title="Legal Assistant"
                 subtitle="Hybrid RAG over your curated legal vector store"
