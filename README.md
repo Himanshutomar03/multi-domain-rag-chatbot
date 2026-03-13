@@ -25,7 +25,6 @@ multi-domain-rag-chatbot/
 │   ├── model_config.json          # Model configuration
 │   ├── prompts_education.txt      # Education domain prompt template
 │   ├── prompts_medical.txt        # Medical domain prompt template
-│   ├── prompts_legal.txt          # Legal domain prompt template
 │   └── settings.yaml              # App settings
 │
 ├── data/
@@ -54,15 +53,12 @@ multi-domain-rag-chatbot/
 │   ├── data_preparation/
 │   │   ├── preprocess_education.py
 │   │   ├── preprocess_medical.py
-│   │   └── preprocess_legal.py
 │   ├── embeddings/
 │   │   ├── vector_store_education.py
 │   │   ├── vector_store_medical.py
-│   │   └── vector_store_legal.py
 │   ├── rag_pipeline/
 │   │   ├── rag_chain_education.py  # Education RAG chain
 │   │   ├── rag_chain_medical.py    # Medical RAG chain
-│   │   └── rag_chain_legal.py      # Legal RAG chain
 │   ├── retriever/
 │   │   ├── domain_router.py        # Routes queries to correct domain
 │   │   ├── hybrid_search.py        # Hybrid search implementation
