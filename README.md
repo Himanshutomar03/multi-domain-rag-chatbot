@@ -170,7 +170,7 @@ The frontend will be available at `http://localhost:5173`.
 
 > The `mode` field tells you whether the answer came from the **RAG pipeline** (relevant documents were found) or the **LLM directly** (no matching documents).
 
-**Supported domains:** `education`, `medical`, `legal`
+**Supported domains:** `education`, `medical`
 
 ---
 
