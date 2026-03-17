@@ -76,7 +76,7 @@ multi-domain-rag-chatbot/
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
