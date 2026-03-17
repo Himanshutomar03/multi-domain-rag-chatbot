@@ -176,7 +176,7 @@ The frontend will be available at `http://localhost:5173`.
 
 ---
 
-## 🧠 How the Hybrid RAG Works
+##  How the Hybrid RAG Works
 
 ```
 User Query
