@@ -143,7 +143,7 @@ The frontend will be available at `http://localhost:5173`.
 
 ---
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 | Method | Endpoint      | Description                          |
 | ------ | ------------- | ------------------------------------ |
